@@ -28,7 +28,19 @@ function deleteTask(id) {
         )
 }
 
+function markTask(id, isDone) {
+    if (isDone === false) {
+        //console.log("this isDone")
+        fetch('http://localhost:8080/tasks/' + id, { method: 'PUT' })
+            .then(response => response.json())
+            .then((response) => {
+                console.log(response)
+                //this.setState({tasks: response});
+            });
+    }
+   ;
 
+}
 const App = () => {
     const [todos, setTodos] = useState([
         {

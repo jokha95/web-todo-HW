@@ -30,6 +30,11 @@ public class TaskController {
         return taskMap.get(id);
     }
 
+    @PutMapping ("/tasks/{id}")
+    public Task markTask(@PathVariable Integer id) {
+        taskMap.get(id).setIsDone(true);
+        return taskMap.get(id);
+    }
 
     @PostMapping("/tasks")
     public void createTask(@RequestBody Task task) {
@@ -39,5 +44,5 @@ public class TaskController {
     @DeleteMapping("/tasks/{id}")
     public void deleteTask(@PathVariable Integer id){ taskMap.remove(id);}
 
-
 }
+
