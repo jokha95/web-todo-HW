@@ -8,6 +8,17 @@ export default function AddTodo({toAdd}) {
         toAdd(valueText);
         setValueText('');
 
+        fetch('http://localhost:8080/tasks',
+            {
+                method: 'POST',
+                // body: JSON.stringify(this.state),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => console.log(response));
+
+
     }
     return (
         <div> {console.log('valueText: ', valueText)}
