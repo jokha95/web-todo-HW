@@ -1,10 +1,10 @@
-package com.example.servingwebcontent.rest.model;
+package com.example.servingwebcontent.rest;
 
-public class Product {
+class Task {
     private final int id;
     private final String name;
 
-    public Product(int id, String name) {
+    public Task(int id, String name) {
         this.id = id;
         this.name = name;
     }
